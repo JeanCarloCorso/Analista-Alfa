@@ -1,0 +1,209 @@
+CREATE TABLE filiais(
+	idfilial serial not null PRIMARY KEY,
+	cnpj varchar,
+	nome varchar,
+	cidade varchar,
+	estado char(2)
+);
+
+CREATE TABLE departamentos(
+	iddepartamento serial not null PRIMARY KEY,
+	nome varchar,
+	idfilial int,
+	FOREIGN KEY (idfilial) REFERENCES filiais(idfilial)
+);
+
+CREATE TABLE COLABORADORES(
+	CPF VARCHAR not null PRIMARY KEY,
+	nome varchar,
+	genero char(1),
+	dataadimissao date,
+	salario double precision,
+	iddepartamento int,
+	FOREIGN KEY (iddepartamento) REFERENCES departamentos(iddepartamento)
+);
+
+
+INSERT INTO Filiais (cnpj,nome,cidade,estado)
+values ('82110818000121','ALFA TRANSPORTES EIRELI','Caçador','SC');
+
+INSERT INTO Filiais (cnpj,nome,cidade,estado)
+values ('82110818000202','ALFA TRANSPORTES EIRELI','Curitiba','PR');
+
+INSERT INTO Filiais (cnpj,nome,cidade,estado)
+values ('82110818000393','ALFA TRANSPORTES EIRELI','Guarulhos','SP');
+
+INSERT INTO Filiais (cnpj,nome,cidade,estado)
+values ('82110818001608','ALFA TRANSPORTES EIRELI','Betim','MG');
+
+INSERT INTO Filiais (cnpj,nome,cidade,estado)
+values ('82110818000806','ALFA TRANSPORTES EIRELI','Cachoeirinha','RG');
+
+INSERT INTO Filiais (cnpj,nome,cidade,estado)
+values ('82110818002760','ALFA TRANSPORTES EIRELI','Tres Lagoas','MS');
+
+INSERT INTO Filiais (cnpj,nome,cidade,estado)
+values ('82110818002094','ALFA TRANSPORTES EIRELI','Goiania','GO');
+
+INSERT INTO Filiais (cnpj,nome,cidade,estado)
+values ('82110818002507','ALFA TRANSPORTES EIRELI','Serra','ES');
+
+INSERT INTO Filiais (cnpj,nome,cidade,estado)
+values ('82110818002841','ALFA TRANSPORTES EIRELI','Rio de Janeiro','RJ');
+
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Expedição',1);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Expedição',2);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Expedição',3);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Expedição',4);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Expedição',5);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Expedição',6);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Expedição',7);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Expedição',8);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Expedição',9);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('SAC',1);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('SAC',2);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('SAC',3);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('SAC',4);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('SAC',5);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('SAC',6);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('SAC',7);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('SAC',8);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('SAC',9);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Operacional',1);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Operacional',2);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Operacional',3);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Operacional',4);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Operacional',5);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Operacional',6);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Operacional',7);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Operacional',8);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Operacional',9);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Gerência',1);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Gerência',2);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Gerência',3);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Gerência',4);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Gerência',5);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Gerência',6);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Gerência',7);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Gerência',8);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Gerência',9);
+
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Administrativo',1);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Administrativo',2);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Administrativo',3);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Administrativo',4);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Administrativo',5);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Administrativo',6);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Administrativo',7);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Administrativo',8);
+
+INSERT INTO departamentos (nome,idfilial)
+VALUES ('Administrativo',9);
+
+
+INSERT INTO colaboradores (cpf,nome,genero,dataadimissao,salario,iddepartamento)
+VALUES ('08563629990','Jonas dos Santos','M',TO_DATE('17/12/2015', 'DD/MM/YYYY'),3000.00,1);
+
+INSERT INTO colaboradores (cpf,nome,genero,dataadimissao,salario,iddepartamento)
+VALUES ('08563629991','Jean Carlo Corso ','M',TO_DATE('09/11/2021', 'DD/MM/YYYY'),3500.00,2);
+
+INSERT INTO colaboradores (cpf,nome,genero,dataadimissao,salario,iddepartamento)
+VALUES ('08563629992','Emanuella Santos','F',TO_DATE('10/11/2021', 'DD/MM/YYYY'),2990.00,2);
+
+INSERT INTO colaboradores (cpf,nome,genero,dataadimissao,salario,iddepartamento)
+VALUES ('08563629980','Maria Antonieta','F',TO_DATE('12/01/2015', 'DD/MM/YYYY'),2000.00,6);
+
+INSERT INTO colaboradores (cpf,nome,genero,dataadimissao,salario,iddepartamento)
+VALUES ('08563629981','Marcos Antonieto','M',TO_DATE('05/11/2020', 'DD/MM/YYYY'),5500.00,9);
+
+INSERT INTO colaboradores (cpf,nome,genero,dataadimissao,salario,iddepartamento)
+VALUES ('08563629982','Emanuel Santos','M',TO_DATE('11/11/2021', 'DD/MM/YYYY'),2990.00,10);
+
